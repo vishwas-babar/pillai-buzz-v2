@@ -1,28 +1,28 @@
 {
-  "name": "@pillaibuzz/db",
-  "version": "0.0.0",
-  "private": true,
-  "main": "./dist/index.js",
-  "type": "commonjs",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": "./dist/index.js"
-  },
-  "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
-    "typecheck": "tsc --noEmit",
-    "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate",
-    "db:push": "drizzle-kit push",
-    "db:studio": "drizzle-kit studio"
-  },
-  "dependencies": {
-    "dotenv": "^17.3.1",
-    "drizzle-orm": "^0.45.1",
-    "postgres": "^3.4.8"
-  },
-  "devDependencies": {
-    "drizzle-kit": "^0.31.9"
-  }
+   "name": "@pillaibuzz/db",
+   "version": "0.0.0",
+   "private": true,
+   "main": "./dist/index.js",
+   "type": "commonjs",
+   "types": "./dist/index.d.ts",
+   "exports": {
+      ".": "./dist/index.js"
+   },
+   "scripts": {
+      "build": "tsc",
+      "dev": "tsc --watch",
+      "typecheck": "tsc --noEmit",
+      "db:generate": "drizzle-kit generate",
+      "db:migrate": "drizzle-kit migrate",
+      "db:push": "drizzle-kit push",
+      "db:studio": "drizzle-kit studio"
+   },
+   "dependencies": {
+      "dotenv": "^17.3.1",
+      "drizzle-orm": "^0.45.1",
+      "postgres": "^3.4.8"
+   },
+   "devDependencies": {
+      "drizzle-kit": "^0.31.9"
+   }
 }

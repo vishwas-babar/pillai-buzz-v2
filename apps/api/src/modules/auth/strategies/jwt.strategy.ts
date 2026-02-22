@@ -6,14 +6,14 @@ import { JwtPayload } from "../interfaces/jwt-payload.interface"
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor() {
-    super({
-      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      secretOrKey: process.env.JWT_SECRET as string,
-    })
-  }
+   constructor() {
+      super({
+         jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+         secretOrKey: process.env.JWT_SECRET as string,
+      })
+   }
 
-  async validate(payload: JwtPayload) {
-    return payload
-  }
+   async validate(payload: JwtPayload) {
+      return payload
+   }
 }

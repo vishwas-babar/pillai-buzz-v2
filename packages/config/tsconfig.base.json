@@ -1,33 +1,33 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "compilerOptions": {
-    /* Language */
-    "target": "ES2022",
-    "lib": ["ES2022"],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    /* Strictness */
+   "$schema": "https://json.schemastore.org/tsconfig",
+   "compilerOptions": {
+      /* Language */
+      "target": "ES2022",
+      "lib": ["ES2022"],
+      "module": "commonjs",
+      "moduleResolution": "node",
+      /* Strictness */
 
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "noUncheckedIndexedAccess": true,
-    /* Interop */
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    /* DX & Safety */
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "dist",
-    "rootDir": "./src",
-    "declaration": true,
-    "isolatedModules": true,
-    /* Imports */
-    "baseUrl": ".",
-    "paths": {
-      "@types/*": ["../types/*"],
-      "@validation/*": ["../validation/*"]
-    }
-  }
+      "strict": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "noUncheckedIndexedAccess": true,
+      /* Interop */
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "resolveJsonModule": true,
+      /* DX & Safety */
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "outDir": "dist",
+      "rootDir": "./src",
+      "declaration": true,
+      "isolatedModules": true,
+      /* Imports */
+      "baseUrl": ".",
+      "paths": {
+         "@types/*": ["../types/*"],
+         "@validation/*": ["../validation/*"]
+      }
+   }
 }

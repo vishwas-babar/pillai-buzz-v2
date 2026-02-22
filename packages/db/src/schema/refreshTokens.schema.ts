@@ -5,18 +5,21 @@ import { users } from "./users.schema"
 import { relations } from "drizzle-orm"
 
 export const refreshTokens = authSchema.table("refresh_tokens", {
-  id: uuid().primaryKey().defaultRandom(),
-  token_hash: text().notNull(),
-  expiresAt: timestamp().notNull(),
-  userId: uuid()
-    .notNull()
-    .references(() => users.id, { onDelete: "cascade" }),
-  ...timestamps,
+   id: uuid().primaryKey().defaultRandom(),
+   token_hash: text().notNull(),
+   expiresAt: timestamp().notNull(),
+   userId: uuid()
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+   ...timestamps,
 })
 
-export const refreshTokensRelations = relations(refreshTokens, ({ one }) => ({
-  user: one(users, {
-    fields: [refreshTokens.userId],
-    references: [users.id],
-  }),
-}))
+export const refreshTokensRelations = relations(
+   refreshTokens,
+   ({ one }) => ({
+      user: one(users, {
+         fields: [refreshTokens.userId],
+         references: [users.id],
+      }),
+   }),
+)

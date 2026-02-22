@@ -7,19 +7,23 @@ import { AuthService } from "./auth.service"
 import { JwtStrategy } from "./strategies/jwt.strategy"
 import { UsersModule } from "../users/users.module"
 
-type StringValue = Exclude<JwtSignOptions["expiresIn"], number | undefined>
+type StringValue = Exclude<
+   JwtSignOptions["expiresIn"],
+   number | undefined
+>
 
 @Module({
-  imports: [
-    UsersModule,
-    JwtModule.register({
-      secret: process.env.JWT_SECRET,
-      signOptions: {
-        expiresIn: (process.env.JWT_ACCESS_EXPIRY || "15m") as StringValue,
-      },
-    }),
-  ],
-  controllers: [AuthController],
-  providers: [AuthService, JwtStrategy],
+   imports: [
+      UsersModule,
+      JwtModule.register({
+         secret: process.env.JWT_SECRET,
+         signOptions: {
+            expiresIn: (process.env.JWT_ACCESS_EXPIRY ||
+               "15m") as StringValue,
+         },
+      }),
+   ],
+   controllers: [AuthController],
+   providers: [AuthService, JwtStrategy],
 })
 export class AuthModule {}

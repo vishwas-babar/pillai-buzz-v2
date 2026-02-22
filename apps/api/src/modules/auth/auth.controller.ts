@@ -6,20 +6,20 @@ import { CurrentUser } from "./decorators/current-user.decorator"
 import { JwtPayload } from "./interfaces/jwt-payload.interface"
 
 @Controller({
-  path: "auth",
-  version: "1",
+   path: "auth",
+   version: "1",
 })
 export class AuthController {
-  constructor(private authService: AuthService) {}
+   constructor(private authService: AuthService) {}
 
-  @Post("register")
-  register(@Body() body: RegisterDto) {
-    return this.authService.register(body)
-  }
+   @Post("register")
+   register(@Body() body: RegisterDto) {
+      return this.authService.register(body)
+   }
 
-  @Get("test")
-  test(@CurrentUser() user: JwtPayload) {
-    console.log("got following user: ", user)
-    return user
-  }
+   @Get("test")
+   test(@CurrentUser() user: JwtPayload) {
+      console.log("got following user: ", user)
+      return user
+   }
 }

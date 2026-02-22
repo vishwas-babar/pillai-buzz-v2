@@ -1,33 +1,33 @@
 {
-  "name": "pillaibuzz",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "dev:packages": "pnpm --filter=\"./packages/**\" dev",
-    "build:packages": "pnpm --filter=\"./packages/**\" build",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "lint": "turbo run lint",
-    "lint:fix": "turbo run lint -- --fix",
-    "typecheck": "turbo run typecheck"
-  },
-  "devDependencies": {
-    "@types/node": "^25.3.0",
-    "@typescript-eslint/eslint-plugin": "^8.56.0",
-    "@typescript-eslint/parser": "^8.56.0",
-    "eslint": "^10.0.1",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-unused-imports": "^4.4.1",
-    "prettier": "^3.7.4",
-    "turbo": "^2.8.10",
-    "typescript": "5.9.2"
-  },
-  "packageManager": "pnpm@9.0.0",
-  "engines": {
-    "node": ">=18"
-  }
+   "name": "pillaibuzz",
+   "private": true,
+   "scripts": {
+      "build": "turbo run build",
+      "dev": "turbo run dev",
+      "dev:packages": "pnpm --filter=\"./packages/**\" dev",
+      "build:packages": "pnpm --filter=\"./packages/**\" build",
+      "format": "prettier --write .",
+      "format:check": "prettier --check .",
+      "lint": "turbo run lint",
+      "lint:fix": "turbo run lint -- --fix",
+      "typecheck": "turbo run typecheck"
+   },
+   "devDependencies": {
+      "@types/node": "^25.3.0",
+      "@typescript-eslint/eslint-plugin": "^8.56.0",
+      "@typescript-eslint/parser": "^8.56.0",
+      "eslint": "^10.0.1",
+      "eslint-config-prettier": "^10.1.8",
+      "eslint-plugin-import": "^2.32.0",
+      "eslint-plugin-react": "^7.37.5",
+      "eslint-plugin-react-hooks": "^5.2.0",
+      "eslint-plugin-unused-imports": "^4.4.1",
+      "prettier": "^3.7.4",
+      "turbo": "^2.8.10",
+      "typescript": "5.9.2"
+   },
+   "packageManager": "pnpm@9.0.0",
+   "engines": {
+      "node": ">=18"
+   }
 }
