@@ -4,9 +4,10 @@
     /* Language */
     "target": "ES2022",
     "lib": ["ES2022"],
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "module": "commonjs",
+    "moduleResolution": "node",
     /* Strictness */
+
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -18,6 +19,9 @@
     /* DX & Safety */
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "rootDir": "./src",
+    "declaration": true,
     "isolatedModules": true,
     /* Imports */
     "baseUrl": ".",

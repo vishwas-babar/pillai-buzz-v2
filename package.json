@@ -4,6 +4,8 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "dev:packages": "pnpm --filter=\"./packages/**\" dev",
+    "build:packages": "pnpm --filter=\"./packages/**\" build",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "turbo run lint",

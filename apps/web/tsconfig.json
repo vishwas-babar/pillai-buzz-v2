@@ -3,5 +3,6 @@
   "compilerOptions": {
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "esnext"]
-  }
+  },
+  
 }

@@ -2,6 +2,7 @@
   "name": "mobile",
   "main": "expo-router/entry",
   "version": "1.0.0",
+  "type": "commonjs",
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
@@ -13,6 +14,8 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
+    "@pillaibuzz/types": "workspace:^",
+    "@pillaibuzz/validation": "workspace:^",
     "@react-navigation/bottom-tabs": "^7.4.0",
     "@react-navigation/elements": "^2.6.3",
     "@react-navigation/native": "^7.1.8",
