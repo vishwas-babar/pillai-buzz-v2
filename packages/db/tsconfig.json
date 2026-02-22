@@ -3,10 +3,12 @@
   "compilerOptions": {
     "composite": true,
     "declaration": true,
+    "declarationMap": true,
+    "outDir": "dist",
+    "rootDir": "src",
     "module": "commonjs",
-    "moduleResolution": "node",
-    "outDir": "./dist",
-    "rootDir": "./src"
+    "moduleResolution": "node"
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }

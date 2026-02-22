@@ -1,0 +1,1 @@
+ALTER TABLE "auth"."users" ALTER COLUMN "role" SET NOT NULL;

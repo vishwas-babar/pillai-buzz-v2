@@ -1,6 +1,6 @@
 {
-  "id": "95fd08a5-1005-4463-be0b-be4f2aad1003",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "791b77b5-209f-447d-bff7-a76fc7564439",
+  "prevId": "95fd08a5-1005-4463-be0b-be4f2aad1003",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -56,7 +56,7 @@
           "type": "roles",
           "typeSchema": "public",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "default": "'member'"
         },
         "updated_at": {
