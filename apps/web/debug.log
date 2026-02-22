@@ -1,0 +1,94 @@
+2026-02-22T08:28:44.663Z eslint:cli CLI args: [ '--debug' ]
+2026-02-22T08:28:44.664Z eslint:cli Using flat config? true
+2026-02-22T08:28:44.667Z eslint:cli Running on files
+2026-02-22T08:28:44.668Z eslint:eslint Using config loader LegacyConfigLoader
+2026-02-22T08:28:44.668Z eslint:eslint Using file patterns: .
+2026-02-22T08:28:44.668Z eslint:eslint Deleting cache file at /media/vishwas/code/pillaibuzz/apps/web/.eslintcache
+2026-02-22T08:28:44.678Z eslint:config-loader Calculating config for file /media/vishwas/code/pillaibuzz/apps/web/.gitignore
+2026-02-22T08:28:44.678Z eslint:config-loader Searching for eslint.config.js
+2026-02-22T08:28:44.679Z eslint:config-loader [Legacy]: Calculating config for /media/vishwas/code/pillaibuzz/apps/web/.gitignore
+2026-02-22T08:28:44.679Z eslint:config-loader [Legacy]: Using config file /media/vishwas/code/pillaibuzz/apps/web/eslint.config.mjs and base path /media/vishwas/code/pillaibuzz/apps/web
+2026-02-22T08:28:44.679Z eslint:config-loader Calculating config array from config file /media/vishwas/code/pillaibuzz/apps/web/eslint.config.mjs and base path /media/vishwas/code/pillaibuzz/apps/web
+2026-02-22T08:28:44.680Z eslint:config-loader Loading config file /media/vishwas/code/pillaibuzz/apps/web/eslint.config.mjs
+2026-02-22T08:28:44.680Z eslint:config-loader Loading config from /media/vishwas/code/pillaibuzz/apps/web/eslint.config.mjs
+2026-02-22T08:28:44.680Z eslint:config-loader Config file URL is file:///media/vishwas/code/pillaibuzz/apps/web/eslint.config.mjs
+2026-02-22T08:28:45.256Z eslint:rules Loading rule 'consistent-return' (remaining=291)
+2026-02-22T08:28:45.268Z eslint:rules Loading rule 'dot-notation' (remaining=290)
+2026-02-22T08:28:45.270Z eslint:rules Loading rule 'init-declarations' (remaining=289)
+2026-02-22T08:28:45.271Z eslint:rules Loading rule 'max-params' (remaining=288)
+2026-02-22T08:28:45.282Z eslint:rules Loading rule 'no-dupe-class-members' (remaining=287)
+2026-02-22T08:28:45.285Z eslint:rules Loading rule 'no-empty-function' (remaining=286)
+2026-02-22T08:28:45.293Z eslint:rules Loading rule 'no-invalid-this' (remaining=285)
+2026-02-22T08:28:45.293Z eslint:rules Loading rule 'no-loop-func' (remaining=284)
+2026-02-22T08:28:45.294Z eslint:rules Loading rule 'no-loss-of-precision' (remaining=283)
+2026-02-22T08:28:45.294Z eslint:rules Loading rule 'no-magic-numbers' (remaining=282)
+2026-02-22T08:28:45.314Z eslint:rules Loading rule 'no-restricted-imports' (remaining=281)
+2026-02-22T08:28:45.360Z eslint:rules Loading rule 'no-unused-expressions' (remaining=280)
+2026-02-22T08:28:45.362Z eslint:rules Loading rule 'no-useless-constructor' (remaining=279)
+2026-02-22T08:28:45.375Z eslint:rules Loading rule 'prefer-destructuring' (remaining=278)
+2026-02-22T08:28:45.954Z eslint:rules Loading rule 'consistent-return' (remaining=291)
+2026-02-22T08:28:45.964Z eslint:rules Loading rule 'dot-notation' (remaining=290)
+2026-02-22T08:28:45.967Z eslint:rules Loading rule 'init-declarations' (remaining=289)
+2026-02-22T08:28:45.967Z eslint:rules Loading rule 'max-params' (remaining=288)
+2026-02-22T08:28:45.979Z eslint:rules Loading rule 'no-dupe-class-members' (remaining=287)
+2026-02-22T08:28:45.987Z eslint:rules Loading rule 'no-empty-function' (remaining=286)
+2026-02-22T08:28:45.997Z eslint:rules Loading rule 'no-invalid-this' (remaining=285)
+2026-02-22T08:28:45.998Z eslint:rules Loading rule 'no-loop-func' (remaining=284)
+2026-02-22T08:28:45.998Z eslint:rules Loading rule 'no-loss-of-precision' (remaining=283)
+2026-02-22T08:28:45.999Z eslint:rules Loading rule 'no-magic-numbers' (remaining=282)
+2026-02-22T08:28:46.019Z eslint:rules Loading rule 'no-restricted-imports' (remaining=281)
+2026-02-22T08:28:46.073Z eslint:rules Loading rule 'no-unused-expressions' (remaining=280)
+2026-02-22T08:28:46.075Z eslint:rules Loading rule 'no-useless-constructor' (remaining=279)
+2026-02-22T08:28:46.083Z eslint:rules Loading rule 'prefer-destructuring' (remaining=278)
+2026-02-22T08:28:46.315Z eslint:rules Loading rule 'consistent-return' (remaining=291)
+2026-02-22T08:28:46.325Z eslint:rules Loading rule 'dot-notation' (remaining=290)
+2026-02-22T08:28:46.328Z eslint:rules Loading rule 'init-declarations' (remaining=289)
+2026-02-22T08:28:46.329Z eslint:rules Loading rule 'max-params' (remaining=288)
+2026-02-22T08:28:46.349Z eslint:rules Loading rule 'no-dupe-class-members' (remaining=287)
+2026-02-22T08:28:46.353Z eslint:rules Loading rule 'no-empty-function' (remaining=286)
+2026-02-22T08:28:46.361Z eslint:rules Loading rule 'no-invalid-this' (remaining=285)
+2026-02-22T08:28:46.362Z eslint:rules Loading rule 'no-loop-func' (remaining=284)
+2026-02-22T08:28:46.362Z eslint:rules Loading rule 'no-loss-of-precision' (remaining=283)
+2026-02-22T08:28:46.363Z eslint:rules Loading rule 'no-magic-numbers' (remaining=282)
+2026-02-22T08:28:46.382Z eslint:rules Loading rule 'no-restricted-imports' (remaining=281)
+2026-02-22T08:28:46.432Z eslint:rules Loading rule 'no-unused-expressions' (remaining=280)
+2026-02-22T08:28:46.434Z eslint:rules Loading rule 'no-useless-constructor' (remaining=279)
+2026-02-22T08:28:46.444Z eslint:rules Loading rule 'prefer-destructuring' (remaining=278)
+2026-02-22T08:28:46.523Z eslint:config-loader Config file /media/vishwas/code/pillaibuzz/apps/web/eslint.config.mjs is not empty
+2026-02-22T08:28:46.526Z eslint:config-loader [Legacy]: Calculating config for /media/vishwas/code/pillaibuzz/apps/web/.next
+2026-02-22T08:28:46.526Z eslint:config-loader [Legacy]: Using config file /media/vishwas/code/pillaibuzz/apps/web/eslint.config.mjs and base path /media/vishwas/code/pillaibuzz/apps/web
+2026-02-22T08:28:46.527Z eslint:config-loader [Legacy]: Calculating config for /media/vishwas/code/pillaibuzz/apps/web/.turbo
+2026-02-22T08:28:46.527Z eslint:config-loader [Legacy]: Using config file /media/vishwas/code/pillaibuzz/apps/web/eslint.config.mjs and base path /media/vishwas/code/pillaibuzz/apps/web
+2026-02-22T08:28:46.530Z eslint:config-loader Calculating config for file /media/vishwas/code/pillaibuzz/apps/web/.turbo/turbo-lint.log
+2026-02-22T08:28:46.530Z eslint:config-loader [Legacy]: Calculating config for /media/vishwas/code/pillaibuzz/apps/web/.turbo/turbo-lint.log
+2026-02-22T08:28:46.530Z eslint:config-loader [Legacy]: Using config file /media/vishwas/code/pillaibuzz/apps/web/eslint.config.mjs and base path /media/vishwas/code/pillaibuzz/apps/web
+2026-02-22T08:28:46.530Z eslint:config-loader Calculating config for file /media/vishwas/code/pillaibuzz/apps/web/README.md
+2026-02-22T08:28:46.530Z eslint:config-loader [Legacy]: Calculating config for /media/vishwas/code/pillaibuzz/apps/web/README.md
+2026-02-22T08:28:46.530Z eslint:config-loader [Legacy]: Using config file /media/vishwas/code/pillaibuzz/apps/web/eslint.config.mjs and base path /media/vishwas/code/pillaibuzz/apps/web
+2026-02-22T08:28:46.530Z eslint:config-loader [Legacy]: Calculating config for /media/vishwas/code/pillaibuzz/apps/web/app
+2026-02-22T08:28:46.530Z eslint:config-loader [Legacy]: Using config file /media/vishwas/code/pillaibuzz/apps/web/eslint.config.mjs and base path /media/vishwas/code/pillaibuzz/apps/web
+2026-02-22T08:28:46.531Z eslint:config-loader Calculating config for file /media/vishwas/code/pillaibuzz/apps/web/app/favicon.ico
+2026-02-22T08:28:46.531Z eslint:config-loader [Legacy]: Calculating config for /media/vishwas/code/pillaibuzz/apps/web/app/favicon.ico
+2026-02-22T08:28:46.531Z eslint:config-loader [Legacy]: Using config file /media/vishwas/code/pillaibuzz/apps/web/eslint.config.mjs and base path /media/vishwas/code/pillaibuzz/apps/web
+2026-02-22T08:28:46.531Z eslint:config-loader Calculating config for file /media/vishwas/code/pillaibuzz/apps/web/app/globals.css
+2026-02-22T08:28:46.531Z eslint:config-loader [Legacy]: Calculating config for /media/vishwas/code/pillaibuzz/apps/web/app/globals.css
+2026-02-22T08:28:46.531Z eslint:config-loader [Legacy]: Using config file /media/vishwas/code/pillaibuzz/apps/web/eslint.config.mjs and base path /media/vishwas/code/pillaibuzz/apps/web
+2026-02-22T08:28:46.531Z eslint:config-loader Calculating config for file /media/vishwas/code/pillaibuzz/apps/web/app/layout.tsx
+2026-02-22T08:28:46.531Z eslint:config-loader [Legacy]: Calculating config for /media/vishwas/code/pillaibuzz/apps/web/app/layout.tsx
+2026-02-22T08:28:46.531Z eslint:config-loader [Legacy]: Using config file /media/vishwas/code/pillaibuzz/apps/web/eslint.config.mjs and base path /media/vishwas/code/pillaibuzz/apps/web
+
+Oops! Something went wrong! :(
+
+ESLint: 9.39.1
+
+ConfigError: Config "next/typescript": Key "plugins": Cannot redefine plugin "@typescript-eslint".
+    at rethrowConfigError (/media/vishwas/code/pillaibuzz/node_modules/.pnpm/@eslint+config-array@0.21.1/node_modules/@eslint/config-array/dist/cjs/index.cjs:343:8)
+    at /media/vishwas/code/pillaibuzz/node_modules/.pnpm/@eslint+config-array@0.21.1/node_modules/@eslint/config-array/dist/cjs/index.cjs:1405:5
+    at Array.reduce (<anonymous>)
+    at FlatConfigArray.getConfigWithStatus (/media/vishwas/code/pillaibuzz/node_modules/.pnpm/@eslint+config-array@0.21.1/node_modules/@eslint/config-array/dist/cjs/index.cjs:1398:43)
+    at FlatConfigArray.getConfig (/media/vishwas/code/pillaibuzz/node_modules/.pnpm/@eslint+config-array@0.21.1/node_modules/@eslint/config-array/dist/cjs/index.cjs:1427:15)
+    at entryFilter (/media/vishwas/code/pillaibuzz/node_modules/.pnpm/eslint@9.39.1_jiti@2.6.1/node_modules/eslint/lib/eslint/eslint-helpers.js:323:27)
+    at async NodeHfs.<anonymous> (file:///media/vishwas/code/pillaibuzz/node_modules/.pnpm/@humanfs+core@0.19.1/node_modules/@humanfs/core/src/hfs.js:574:24)
+    at async NodeHfs.<anonymous> (file:///media/vishwas/code/pillaibuzz/node_modules/.pnpm/@humanfs+core@0.19.1/node_modules/@humanfs/core/src/hfs.js:604:6)
+    at async NodeHfs.walk (file:///media/vishwas/code/pillaibuzz/node_modules/.pnpm/@humanfs+core@0.19.1/node_modules/@humanfs/core/src/hfs.js:614:3)
+    at async globSearch (/media/vishwas/code/pillaibuzz/node_modules/.pnpm/eslint@9.39.1_jiti@2.6.1/node_modules/eslint/lib/eslint/eslint-helpers.js:364:20)

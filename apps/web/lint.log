@@ -1,0 +1,21 @@
+
+> web@0.1.0 lint /media/vishwas/code/pillaibuzz/apps/web
+> eslint
+
+
+Oops! Something went wrong! :(
+
+ESLint: 9.39.1
+
+ConfigError: Config "next": Key "plugins": Cannot redefine plugin "import".
+    at rethrowConfigError (/media/vishwas/code/pillaibuzz/node_modules/.pnpm/@eslint+config-array@0.21.1/node_modules/@eslint/config-array/dist/cjs/index.cjs:343:8)
+    at /media/vishwas/code/pillaibuzz/node_modules/.pnpm/@eslint+config-array@0.21.1/node_modules/@eslint/config-array/dist/cjs/index.cjs:1405:5
+    at Array.reduce (<anonymous>)
+    at FlatConfigArray.getConfigWithStatus (/media/vishwas/code/pillaibuzz/node_modules/.pnpm/@eslint+config-array@0.21.1/node_modules/@eslint/config-array/dist/cjs/index.cjs:1398:43)
+    at FlatConfigArray.getConfig (/media/vishwas/code/pillaibuzz/node_modules/.pnpm/@eslint+config-array@0.21.1/node_modules/@eslint/config-array/dist/cjs/index.cjs:1427:15)
+    at entryFilter (/media/vishwas/code/pillaibuzz/node_modules/.pnpm/eslint@9.39.1_jiti@2.6.1/node_modules/eslint/lib/eslint/eslint-helpers.js:323:27)
+    at async NodeHfs.<anonymous> (file:///media/vishwas/code/pillaibuzz/node_modules/.pnpm/@humanfs+core@0.19.1/node_modules/@humanfs/core/src/hfs.js:574:24)
+    at async NodeHfs.<anonymous> (file:///media/vishwas/code/pillaibuzz/node_modules/.pnpm/@humanfs+core@0.19.1/node_modules/@humanfs/core/src/hfs.js:604:6)
+    at async NodeHfs.walk (file:///media/vishwas/code/pillaibuzz/node_modules/.pnpm/@humanfs+core@0.19.1/node_modules/@humanfs/core/src/hfs.js:614:3)
+    at async globSearch (/media/vishwas/code/pillaibuzz/node_modules/.pnpm/eslint@9.39.1_jiti@2.6.1/node_modules/eslint/lib/eslint/eslint-helpers.js:364:20)
+ ELIFECYCLE  Command failed with exit code 2.
