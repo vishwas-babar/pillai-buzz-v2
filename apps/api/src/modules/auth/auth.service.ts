@@ -96,7 +96,7 @@ export class AuthService {
       }
    }
 
-   async refreshToken(data: refreshTokenDto, id: string) {
+   async refreshToken(data: refreshTokenDto) {
       const [refreshTokenRecordIndb] =
          await this.refreshTokensRepository.findBy({
             token_hash: data.refreshToken,
@@ -108,7 +108,9 @@ export class AuthService {
             "Refreshtoken not found or expired",
          )
 
-      const user = await this.usersRepository.findBy({ id })
+      const user = await this.usersRepository.findBy({
+         id: refreshTokenRecordIndb.userId,
+      })
       if (!user) throw new NotFoundException("Current User not found")
       const { refreshToken, accessToken } =
          await this.rotateAccessRefreshToken(data.refreshToken, {

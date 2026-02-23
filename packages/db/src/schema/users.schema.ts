@@ -27,7 +27,7 @@ export const users = authSchema.table(
       userID: varchar({ length: 64 }).notNull().unique(),
       email: varchar({ length: 256 }).notNull().unique(),
       name: varchar({ length: 512 }),
-      password: varchar({ length: 30 }).notNull(),
+      password: varchar({ length: 255 }).notNull(),
       avatarKey: varchar({ length: 512 }),
       bio: varchar({ length: 512 }),
       role: rolesEnum().default("member").notNull(),

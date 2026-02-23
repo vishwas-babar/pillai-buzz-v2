@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common"
 import { db, refreshTokens } from "@pillaibuzz/db"
-import { and, eq, SQL, lt } from "drizzle-orm"
+import { and, eq, gt, SQL } from "drizzle-orm"
 
 @Injectable()
 export class RefreshTokensRepository {
@@ -13,7 +13,7 @@ export class RefreshTokensRepository {
       token_hash: string
       expiresAt: Date
    }) {
-      db.insert(refreshTokens).values({
+      await db.insert(refreshTokens).values({
          userId: id,
          token_hash,
          expiresAt,
@@ -33,7 +33,7 @@ export class RefreshTokensRepository {
       if (token_hash)
          filters.push(eq(refreshTokens.token_hash, token_hash))
       if (expiresAt)
-         filters.push(lt(refreshTokens.expiresAt, expiresAt))
+         filters.push(gt(refreshTokens.expiresAt, expiresAt))
       if (userID) filters.push(eq(refreshTokens.userId, userID))
       return db
          .select()

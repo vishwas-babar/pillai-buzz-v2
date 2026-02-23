@@ -1,0 +1,30 @@
+meta {
+  name: refresh token
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{BASE_URL}}/auth/refresh-token
+  body: json
+  auth: bearer
+}
+
+headers {
+  Authorization: Bearer {{ACCESS_TOKEN}}
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "refreshToken": "b5d99a504a4f87cbdbb08cf18654be524027c6b7e5febf0f5c56a30720fc07a6c1e4a8a6a3d2e69e38a2ed836091538e3d152a9abf427b8cdcfe40255bcf5297"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

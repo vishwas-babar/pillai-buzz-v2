@@ -1,4 +1,10 @@
-import { Body, Controller, Get, Post } from "@nestjs/common"
+import {
+   Body,
+   Controller,
+   Get,
+   Post,
+   UseGuards,
+} from "@nestjs/common"
 
 import { AuthService } from "./auth.service"
 import { RegisterDto } from "./dto/register.dto"
@@ -6,6 +12,7 @@ import { CurrentUser } from "./decorators/current-user.decorator"
 import { JwtPayload } from "./interfaces/jwt-payload.interface"
 import { LoginDto } from "./dto/login.dto"
 import { refreshTokenDto } from "./dto/refreshToken.dto"
+import { JwtAuthGuard } from "./guards/jwt-auth.guard"
 
 @Controller({
    path: "auth",
@@ -25,16 +32,13 @@ export class AuthController {
    }
 
    @Post("refresh-token")
-   refreshToken(
-      @Body() body: refreshTokenDto,
-      @CurrentUser() user: JwtPayload,
-   ) {
-      return this.authService.refreshToken(body, user.sub)
+   refreshToken(@Body() body: refreshTokenDto) {
+      return this.authService.refreshToken(body)
    }
 
    @Get("test")
+   @UseGuards(JwtAuthGuard)
    test(@CurrentUser() user: JwtPayload) {
-      console.log("got following user: ", user)
       return user
    }
 }

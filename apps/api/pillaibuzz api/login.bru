@@ -1,20 +1,17 @@
 meta {
-  name: register
+  name: login
   type: http
-  seq: 1
+  seq: 3
 }
 
 post {
-  url: {{BASE_URL}}/auth/register
+  url: {{BASE_URL}}/auth/login
   body: json
   auth: inherit
 }
 
 body:json {
   {
-    "avatar": "s3-object-key",
-    "name": "vishwas babar",
-    "userID": "vishwas1d234",
     "email": "vishwas1234@gmail.com",
     "password": "Pass@1234"
   }

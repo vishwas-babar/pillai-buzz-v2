@@ -1,5 +1,6 @@
 import {
    IsEmail,
+   IsOptional,
    IsString,
    Matches,
    MaxLength,
@@ -7,8 +8,13 @@ import {
 } from "class-validator"
 
 export class RegisterDto {
+   @IsOptional()
+   @IsString()
    avatar?: string
 
+   @IsString()
+   @MinLength(4)
+   @MaxLength(50)
    userID!: string
 
    @IsEmail()

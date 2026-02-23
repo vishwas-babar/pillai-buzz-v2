@@ -15,6 +15,13 @@
          "when": 1771778783897,
          "tag": "0001_roles-changes",
          "breakpoints": true
+      },
+      {
+         "idx": 2,
+         "version": "7",
+         "when": 1771835235535,
+         "tag": "0002_increasepasswordlength",
+         "breakpoints": true
       }
    ]
 }
