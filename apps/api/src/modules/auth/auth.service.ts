@@ -4,6 +4,7 @@ import {
    BadRequestException,
    Injectable,
    InternalServerErrorException,
+   NotFoundException,
 } from "@nestjs/common"
 import bcrypt from "bcrypt"
 import { JwtService } from "@nestjs/jwt"
@@ -11,7 +12,9 @@ import { JwtService } from "@nestjs/jwt"
 import { UsersRepository } from "../users/users.repository"
 import { RegisterDto } from "./dto/register.dto"
 import { JwtPayload, Role } from "./interfaces/jwt-payload.interface"
-import { RefreshTokensRepository } from "../users/refreshTokens.repository"
+import { RefreshTokensRepository } from "./refreshTokens.repository"
+import { LoginDto } from "./dto/login.dto"
+import { refreshTokenDto } from "./dto/refreshToken.dto"
 
 @Injectable()
 export class AuthService {
@@ -22,20 +25,20 @@ export class AuthService {
    ) {}
 
    async register(data: RegisterDto) {
-      const { email, password, userID, name, avatar } = data
+      const { email, password, userID } = data
 
       const existingWithEmail = await this.usersRepository.findBy({
          email,
       })
 
-      if (existingWithEmail.length)
+      if (existingWithEmail)
          throw new BadRequestException("Email already registered")
 
       const existingWithUserId = await this.usersRepository.findBy({
          userID,
       })
 
-      if (existingWithUserId.length)
+      if (existingWithUserId)
          throw new BadRequestException("UserID already registered")
 
       const hashedPassword = await bcrypt.hash(password, 10)
@@ -59,6 +62,75 @@ export class AuthService {
       return { user: createdUser, accessToken, refreshToken }
    }
 
+   async login(data: LoginDto) {
+      const { email, password } = data
+
+      const user = await this.usersRepository.findByWithPassword({
+         email,
+      })
+
+      if (!user)
+         throw new NotFoundException(
+            "No user found with provide email",
+         )
+
+      const { password: passwordHash, ...userWithoutPwd } = user
+      const passwordMatch = await bcrypt.compare(
+         password,
+         passwordHash,
+      )
+
+      if (!passwordMatch)
+         throw new BadRequestException("Wrong password!")
+
+      const { accessToken, refreshToken } =
+         await this.getRefreshAccessTokens({
+            id: user.id,
+            role: user.role,
+         })
+
+      return {
+         accessToken,
+         refreshToken,
+         user: userWithoutPwd,
+      }
+   }
+
+   async refreshToken(data: refreshTokenDto, id: string) {
+      const [refreshTokenRecordIndb] =
+         await this.refreshTokensRepository.findBy({
+            token_hash: data.refreshToken,
+            expiresAt: new Date(),
+         })
+
+      if (!refreshTokenRecordIndb)
+         throw new NotFoundException(
+            "Refreshtoken not found or expired",
+         )
+
+      const user = await this.usersRepository.findBy({ id })
+      if (!user) throw new NotFoundException("Current User not found")
+      const { refreshToken, accessToken } =
+         await this.rotateAccessRefreshToken(data.refreshToken, {
+            id: user.id,
+            role: user.role,
+         })
+      return { refreshToken, accessToken, user }
+   }
+
+   private async rotateAccessRefreshToken(
+      oldRefreshToken: string,
+      { id, role }: { id: string; role: Role },
+   ) {
+      const { accessToken, refreshToken } =
+         await this.getRefreshAccessTokens({ id, role })
+
+      await this.refreshTokensRepository.deleteAccessTokenByTokenHash(
+         oldRefreshToken,
+      )
+      return { accessToken, refreshToken }
+   }
+
    private async getRefreshAccessTokens({
       id,
       role,
@@ -67,7 +139,7 @@ export class AuthService {
       role: Role
    }) {
       return {
-         refreshToken: this.generateRefreshToken(id),
+         refreshToken: await this.generateRefreshToken(id),
          accessToken: this.generateAccessToken({ sub: id, role }),
       }
    }
@@ -90,5 +162,6 @@ export class AuthService {
          token_hash: refreshToken,
          expiresAt: this.getExpiresAtForRefreshToken(),
       })
+      return refreshToken
    }
 }

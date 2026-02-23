@@ -4,6 +4,8 @@ import { AuthService } from "./auth.service"
 import { RegisterDto } from "./dto/register.dto"
 import { CurrentUser } from "./decorators/current-user.decorator"
 import { JwtPayload } from "./interfaces/jwt-payload.interface"
+import { LoginDto } from "./dto/login.dto"
+import { refreshTokenDto } from "./dto/refreshToken.dto"
 
 @Controller({
    path: "auth",
@@ -15,6 +17,19 @@ export class AuthController {
    @Post("register")
    register(@Body() body: RegisterDto) {
       return this.authService.register(body)
+   }
+
+   @Post("login")
+   login(@Body() body: LoginDto) {
+      return this.authService.login(body)
+   }
+
+   @Post("refresh-token")
+   refreshToken(
+      @Body() body: refreshTokenDto,
+      @CurrentUser() user: JwtPayload,
+   ) {
+      return this.authService.refreshToken(body, user.sub)
    }
 
    @Get("test")

@@ -6,6 +6,7 @@ import { AuthController } from "./auth.controller"
 import { AuthService } from "./auth.service"
 import { JwtStrategy } from "./strategies/jwt.strategy"
 import { UsersModule } from "../users/users.module"
+import { RefreshTokensRepository } from "./refreshTokens.repository"
 
 type StringValue = Exclude<
    JwtSignOptions["expiresIn"],
@@ -24,6 +25,7 @@ type StringValue = Exclude<
       }),
    ],
    controllers: [AuthController],
-   providers: [AuthService, JwtStrategy],
+   providers: [AuthService, JwtStrategy, RefreshTokensRepository],
+   exports: [RefreshTokensRepository],
 })
 export class AuthModule {}

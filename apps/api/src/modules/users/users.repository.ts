@@ -20,10 +20,38 @@ export class UsersRepository {
       if (email) filters.push(eq(users.email, email))
       if (userID) filters.push(eq(users.userID, userID))
 
-      return await db
+      if (!filters.length) return null
+
+      const { password: _password, ...safeUserColumns } =
+         getTableColumns(users)
+      const [user] = await db
+         .select(safeUserColumns)
+         .from(users)
+         .where(and(...filters))
+
+      return user
+   }
+
+   async findByWithPassword({
+      id,
+      email,
+      userID,
+   }: {
+      id?: string
+      email?: string
+      userID?: string
+   }) {
+      const filters: SQL[] = []
+      if (id) filters.push(eq(users.id, id))
+      if (email) filters.push(eq(users.email, email))
+      if (userID) filters.push(eq(users.userID, userID))
+
+      const [user] = await db
          .select()
          .from(users)
          .where(and(...filters))
+
+      return user ?? null
    }
 
    async createNewUser({
