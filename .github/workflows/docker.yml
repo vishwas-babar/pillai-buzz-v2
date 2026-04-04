@@ -53,5 +53,5 @@ jobs:
               context: .
               push: true
               tags: |
-                 ${{ secrets.DOCKERHUB_USERNAME }}/pillaibuzz:latest
-                 ${{ secrets.DOCKERHUB_USERNAME }}/pillaibuzz:${{ github.sha }}
+                 ${{ secrets.DOCKER_USERNAME }}/pillaibuzz:latest
+                 ${{ secrets.DOCKER_USERNAME }}/pillaibuzz:${{ github.sha }}
