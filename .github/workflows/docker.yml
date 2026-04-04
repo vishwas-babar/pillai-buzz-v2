@@ -7,7 +7,8 @@ on:
       branches: [main]
 
 jobs:
-   lint-and-typecheck:
+   typecheck:
+      name: "typecheck and build"
       runs-on: ubuntu-latest
 
       steps:
@@ -28,8 +29,10 @@ jobs:
          - name: Type check
            run: pnpm typecheck
 
-   docker-build-and-push:
+   docker:
+      name: "Build and Push Docker Image"
       runs-on: ubuntu-latest
+      needs: typecheck
       steps:
          - uses: actions/checkout@v4
 
