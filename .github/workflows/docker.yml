@@ -21,6 +21,8 @@ jobs:
            uses: pnpm/action-setup@v4
          - name: Install dependencies
            run: pnpm install --frozen-lockfile
+         - name: Build workspace
+           run: pnpm build
          - name: linting check
            run: pnpm lint
          - name: type check
