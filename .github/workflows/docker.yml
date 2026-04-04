@@ -1,0 +1,17 @@
+name: Docker ci
+
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs: 
+    lint-and-typecheck:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: linting check
+              run: pnpm lint
+            - name: type check
+              run: pnpm typecheck
