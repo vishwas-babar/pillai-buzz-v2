@@ -1,4 +1,4 @@
-FROM node:22-alpine
+FROM node:22-alpine AS builder
 
 # Enable corepack
 RUN corepack enable
@@ -27,9 +27,22 @@ RUN pnpm install --frozen-lockfile
 COPY . .
 RUN pnpm build --filter=api
 
-# remove dev dependencies
-RUN pnpm prune --prod
+# stage: 2
+FROM node:22-alpine
+
+WORKDIR /app
+
+COPY --from=builder /app/apps/api/dist ./apps/api/dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/apps/api/node_modules ./apps/api/node_modules
+COPY --from=builder /app/packages/db/package.json ./packages/db/package.json
+COPY --from=builder /app/packages/db/dist ./packages/db/dist
+COPY --from=builder /app/packages/db/node_modules ./packages/db/node_modules
+COPY --from=builder /app/packages/validation/package.json ./packages/validation/package.json
+COPY --from=builder /app/packages/validation/dist ./packages/validation/dist
+COPY --from=builder /app/packages/types/package.json ./packages/types/package.json
+COPY --from=builder /app/packages/types/dist ./packages/types/dist
 
 WORKDIR /app/apps/api
 EXPOSE 3000
-CMD [ "pnpm", "start" ]
+CMD [ "node", "dist/main.js" ]
